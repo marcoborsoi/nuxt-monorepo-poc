@@ -4,6 +4,6 @@
 
     <v-hero />
     <v-button>@myorg/nuxt-app/VButton</v-button>
-    <v-tag>@myorg/shared-ui/VTag</v-tag>
+    <!-- <v-tag>@myorg/shared-ui/VTag</v-tag> -->
   </v-featured-container>
 </template>
