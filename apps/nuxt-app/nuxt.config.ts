@@ -24,6 +24,10 @@ export default defineNuxtConfig({
 
   modules: ['@myorg/shared-ui-nuxt', '@myorg/shared-featured-components'],
 
+  nitro: {
+    preset: 'vercel',
+  },
+
   vite: {
     $client: {
       build: {
