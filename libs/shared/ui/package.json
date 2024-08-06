@@ -1,0 +1,22 @@
+{
+  "name": "@myorg/shared-ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/shared-ui.js",
+  "module": "./dist/shared-ui.js",
+  "exports": {
+    ".": {
+      "import": "./dist/shared-ui.js",
+      "require": "./dist/shared-ui.umd.cjs"
+    },
+    "./dist/shared-ui.css": "./dist/shared-ui.css"
+  },
+  "scripts": {
+    "build": "vue-tsc && vite build",
+    "dev": "vue-tsc && vite build --watch"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@myorg/shared-featured-components",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm run dev:prepare && nuxt-module-build build",
+    "dev": "nuxt-module-build build --watch",
+    "dev:build": "nuxi build playground",
+    "dev:playground": "nuxi dev playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground"
+  },
+  "peerDependencies": {
+    "@myorg/shared-ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@myorg/shared-ui": "workspace:*"
+  }
+}

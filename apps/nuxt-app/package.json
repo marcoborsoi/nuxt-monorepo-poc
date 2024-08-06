@@ -1,0 +1,16 @@
+{
+  "name": "@myorg/nuxt-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@myorg/shared-ui": "workspace:*",
+    "@myorg/shared-ui-nuxt": "workspace:*",
+    "@myorg/shared-featured-components": "workspace:*"
+  }
+}
