@@ -17,12 +17,11 @@
   ],
   "scripts": {
     "build": "pnpm run dev:prepare && nuxt-module-build build",
-    "dev": "nuxt-module-build build --watch",
+    "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:playground": "nuxi dev playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground"
   },
-  "devDependencies": {
+  "dependencies": {
     "@myorg/shared-ui": "workspace:*"
   }
 }

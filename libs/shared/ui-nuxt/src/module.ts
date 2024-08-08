@@ -1,10 +1,8 @@
-import { addComponent, addComponentsDir, createResolver, defineNuxtModule } from '@nuxt/kit'
+import { addComponent, addComponentsDir, createResolver, defineNuxtModule, useNuxt } from '@nuxt/kit'
 import { name, version } from '../package.json'
-import type { SharedUiOptions } from './types'
-import { /* useSharedUiComponents, */ useSharedUiCSS, useTranspile } from './composables'
-// import { useComposables } from './composables/useComposables'
+import type { ModuleOptions } from '@nuxt/schema'
 
-export default defineNuxtModule<SharedUiOptions>({
+export default defineNuxtModule<ModuleOptions>({
   meta: {
     name,
     version,
@@ -14,30 +12,25 @@ export default defineNuxtModule<SharedUiOptions>({
     },
   },
 
-  defaults: {
-    css: true,
-    fonts: false,
-  },
-
-  setup(options) {
+  setup() {
+    const nuxt = useNuxt()
     const resolver = createResolver(import.meta.url)
 
+    nuxt.options.build.transpile.push('@myorg/shared-ui')
+    nuxt.options.css.push('@myorg/shared-ui/dist/shared-ui.css')
+    
+    // This works.
     addComponentsDir({
       path: resolver.resolve('../src/runtime/components'),
       pathPrefix: false,
       global: true,
     })
 
+    // This works on nuxt@3.10.3 and below, but it does not work on nuxt@3.11.0 and above.
     addComponent({
-      name: 'VTag',
-      export: 'VTag',
+      name: 'VSpan',
+      export: 'VSpan',
       filePath: '@myorg/shared-ui',
-      // global: true,
     })
-
-    useSharedUiCSS(options)
-    // useSharedUiComponents()
-    // useComposables()
-    useTranspile()
   },
 })
