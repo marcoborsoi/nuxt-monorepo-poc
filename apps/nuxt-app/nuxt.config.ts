@@ -5,4 +5,19 @@ export default defineNuxtConfig({
   },
 
   modules: ['@myorg/shared-ui-nuxt'],
+
+  // nitro: {
+  //   preset: 'vercel',
+  // },
+
+  // vite: {
+  //   build: {
+  //     rollupOptions: {
+  //       output: {
+  //         chunkFileNames: '_nuxt/[name].[hash].js',
+  //         entryFileNames: '_nuxt/[name].[hash].js',
+  //       },
+  //     },
+  //   },
+  // },
 })
