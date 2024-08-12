@@ -1,11 +1,11 @@
 <template>
-  <span class="v-tag">
+  <span class="v-span">
     <slot />
   </span>
 </template>
 
 <style>
-.v-tag {
+.v-span {
   border: 0;
   background-color: #ff0000;
   color: #ffffff;

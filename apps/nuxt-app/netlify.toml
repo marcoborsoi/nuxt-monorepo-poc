@@ -1,0 +1,15 @@
+[build.environment]
+  NODE_VERSION = "20.11.0"
+  PNPM_FLAGS = "--frozen-lockfile"
+
+[build]
+  publish = "apps/nuxt-app/dist/"
+  command = "pnpm ci:app"
+  # ignore = "cd ./apps/nuxt-app"
+
+[functions]
+  external_node_modules = ["tslib"]
+  node_bundler = "esbuild"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"

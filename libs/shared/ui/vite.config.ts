@@ -3,14 +3,14 @@ import dts from 'vite-plugin-dts'
 import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
 import { resolve } from 'path'
-// import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 
 export default defineConfig({
-  // root: __dirname,
-  // cacheDir: '../../../node_modules/.vite/libs/shared/ui',
+  root: __dirname,
+  cacheDir: '../../../node_modules/.vite/libs/shared/ui',
 
   plugins: [
-    // nxViteTsPaths(),
+    nxViteTsPaths(),
     dts({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
@@ -21,10 +21,10 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    // reportCompressedSize: true,
-    // commonjsOptions: {
-    //   transformMixedEsModules: true,
-    // },
+    reportCompressedSize: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'shared-ui',
@@ -41,15 +41,11 @@ export default defineConfig({
 
           return assetInfo.name as string
         },
-        // exports: 'named',
+        exports: 'named',
         globals: {
           vue: 'Vue',
         },
       },
     },
   },
-
-  // resolve: {
-  //   dedupe: ['vue'],
-  // },
 })

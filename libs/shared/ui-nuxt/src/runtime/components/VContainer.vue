@@ -1,11 +1,11 @@
 <template>
-  <div class="v-hero">
-    <p>@myorg/shared-ui-nuxt/VHero</p>
+  <div class="v-container">
+    <slot />
   </div>
 </template>
 
 <style>
-.v-hero {
+.v-container {
   border: 1px solid red;
   padding: 2rem;
 }

@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@myorg/shared-ui": "workspace:*",
-    "@myorg/shared-ui-nuxt": "workspace:*",
-    "@myorg/shared-featured-components": "workspace:*"
+    "@myorg/shared-ui-nuxt": "workspace:*"
   }
 }

@@ -1,1 +1,1 @@
-export * from './VTag'
+export * from './VSpan'

@@ -4,12 +4,10 @@
   "private": true,
   "scripts": {
     "build:app:nuxt": "nx build @myorg/nuxt-app",
-    "build:lib:shared-featured-components": "nx build @myorg/shared-featured-components",
     "build:lib:shared-ui": "nx build @myorg/shared-ui",
     "build:lib:shared-ui-nuxt": "nx build @myorg/shared-ui-nuxt",
     "ci:app": "nx build @myorg/nuxt-app --skip-nx-cache",
     "dev:app:nuxt": "nx dev @myorg/nuxt-app",
-    "dev:lib:shared-featured-components": "nx dev @myorg/shared-featured-components",
     "dev:lib:shared-ui": "nx dev @myorg/shared-ui",
     "dev:lib:shared-ui-nuxt": "nx dev @myorg/shared-ui-nuxt",
     "reset": "pnpm -r exec rm -rf node_modules && pnpm exec rm -rf node_modules"

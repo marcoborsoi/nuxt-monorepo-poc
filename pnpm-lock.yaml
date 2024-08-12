@@ -72,9 +72,6 @@ importers:
 
   apps/nuxt-app:
     dependencies:
-      '@myorg/shared-featured-components':
-        specifier: workspace:*
-        version: link:../../libs/shared/featured-components
       '@myorg/shared-ui':
         specifier: workspace:*
         version: link:../../libs/shared/ui
@@ -82,16 +79,10 @@ importers:
         specifier: workspace:*
         version: link:../../libs/shared/ui-nuxt
 
-  libs/shared/featured-components:
-    devDependencies:
-      '@myorg/shared-ui':
-        specifier: workspace:*
-        version: link:../ui
-
   libs/shared/ui: {}
 
   libs/shared/ui-nuxt:
-    devDependencies:
+    dependencies:
       '@myorg/shared-ui':
         specifier: workspace:*
         version: link:../ui
@@ -4168,8 +4159,8 @@ packages:
     dependencies:
       '@mapbox/node-pre-gyp': 1.0.11
       '@rollup/pluginutils': 4.2.1
-      acorn: 8.11.3
-      acorn-import-attributes: 1.9.5(acorn@8.11.3)
+      acorn: 8.12.1
+      acorn-import-attributes: 1.9.5(acorn@8.12.1)
       async-sema: 3.1.1
       bindings: 1.5.0
       estree-walker: 2.0.2
@@ -4567,12 +4558,12 @@ packages:
       event-target-shim: 5.0.1
     dev: true
 
-  /acorn-import-attributes@1.9.5(acorn@8.11.3):
+  /acorn-import-attributes@1.9.5(acorn@8.12.1):
     resolution: {integrity: sha512-n02Vykv5uA3eHGM/Z2dQrcD56kL8TyDb2p1+0P83PClMnC/nc+anbQRhIOWnSq4Ke/KvDPrY3C9hDtC/A3eHnQ==}
     peerDependencies:
       acorn: ^8
     dependencies:
-      acorn: 8.11.3
+      acorn: 8.12.1
     dev: true
 
   /acorn-jsx@5.3.2(acorn@8.12.1):
@@ -4594,6 +4585,7 @@ packages:
     resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: true
 
   /acorn@8.12.1:
     resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
@@ -9825,7 +9817,7 @@ packages:
     hasBin: true
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.11.3
+      acorn: 8.12.1
       commander: 2.20.3
       source-map-support: 0.5.21
     dev: true
@@ -10069,7 +10061,7 @@ packages:
   /unctx@2.3.1:
     resolution: {integrity: sha512-PhKke8ZYauiqh3FEMVNm7ljvzQiph0Mt3GBRve03IJm7ukfaON2OBK795tLwhbyfzknuRRkW0+Ze+CQUmzOZ+A==}
     dependencies:
-      acorn: 8.11.3
+      acorn: 8.12.1
       estree-walker: 3.0.3
       magic-string: 0.30.11
       unplugin: 1.12.0

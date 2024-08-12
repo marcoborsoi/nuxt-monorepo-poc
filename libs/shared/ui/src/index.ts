@@ -9,5 +9,4 @@ function install(app: App) {
 }
 
 export * from './lib/components'
-export * from './lib/composables'
 export default { install }
